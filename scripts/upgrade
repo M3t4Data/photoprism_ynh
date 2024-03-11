@@ -49,7 +49,7 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir/build/"
+	ynh_setup_source --dest_dir="$install_dir/build/" --full_replace=1
 	
 	mkdir -p "$install_dir/live/"
 	rsync -a "$install_dir/build/opt/photoprism/" "$install_dir/live/"
